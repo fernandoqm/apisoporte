@@ -16,4 +16,10 @@
     <Folder Include="Services\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\SP.Domain\SP.Domain.csproj" />
+    <ProjectReference Include="..\SP.Infrastructure\SP.Infrastructure.csproj" />
+    <ProjectReference Include="..\SP.Utilities\SP.Utilities.csproj" />
+  </ItemGroup>
+
 </Project>

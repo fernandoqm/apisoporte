@@ -14,4 +14,10 @@
     <Folder Include="Controllers\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\SP.Application\SP.Application.csproj" />
+    <ProjectReference Include="..\SP.Infrastructure\SP.Infrastructure.csproj" />
+    <ProjectReference Include="..\SP.Utilities\SP.Utilities.csproj" />
+  </ItemGroup>
+
 </Project>
