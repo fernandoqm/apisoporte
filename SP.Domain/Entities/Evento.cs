@@ -83,6 +83,4 @@ public partial class Evento
     /// D: Doble
     /// </summary>
     public string? Jornada { get; set; }
-
-    public virtual Cliente? ClienteNavigation { get; set; }
 }
