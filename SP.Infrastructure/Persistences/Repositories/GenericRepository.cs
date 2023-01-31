@@ -1,4 +1,4 @@
-﻿using SP.Infrastructure.Commons.Base;
+﻿using SP.Infrastructure.Commons.Base.Request;
 using SP.Infrastructure.Helpers;
 using SP.Infrastructure.Persistences.Interfaces;
 using System.Linq.Dynamic.Core;

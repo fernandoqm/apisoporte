@@ -1,4 +1,4 @@
-﻿using SP.Infrastructure.Commons.Base;
+﻿using SP.Infrastructure.Commons.Base.Request;
 
 namespace SP.Infrastructure.Helpers
 {

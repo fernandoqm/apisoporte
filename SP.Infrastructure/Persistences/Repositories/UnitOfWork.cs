@@ -1,37 +1,34 @@
 ﻿using SP.Infrastructure.Persistences.Contexts;
 using SP.Infrastructure.Persistences.Interfaces;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SP.Infrastructure.Persistences.Repositories
 {
     public class UnitOfWork : IUnitOfWork
     {
         private readonly SoporteContext _context;
-        public ICategoryRepository Category { get; private set; }
+
+        public IColaAtencionRepository ColaAtencion {get; private set;}
 
         public UnitOfWork(SoporteContext context)
         {
             _context = context;
-            Category = new CategoryRepository();
+            ColaAtencion = new ColaAtencionRepository(_context);   
         }
+
 
         public void Dispose()
         {
-            throw new NotImplementedException();
+            _context.Dispose();
         }
 
         public void SalvarCambios()
         {
-            throw new NotImplementedException();
+            _context.SaveChanges();
         }
 
-        public Task SalvarCambiosAsync()
+        public async Task SalvarCambiosAsync()
         {
-            throw new NotImplementedException();
+            await _context.SaveChangesAsync();
         }
     }
 }

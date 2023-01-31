@@ -2,6 +2,8 @@
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using SP.Infrastructure.Persistences.Contexts;
+using SP.Infrastructure.Persistences.Interfaces;
+using SP.Infrastructure.Persistences.Repositories;
 
 namespace SP.Infrastructure.Extensions
 {
@@ -13,6 +15,9 @@ namespace SP.Infrastructure.Extensions
             services.AddDbContext<SoporteContext>(
                 options => options.UseNpgsql(
                     configuration.GetConnectionString("SoporteConnection"), b => b.MigrationsAssembly(assembly)), ServiceLifetime.Transient);
+            
+            services.AddTransient<IUnitOfWork, UnitOfWork>();
+
             return services;
         }
     }

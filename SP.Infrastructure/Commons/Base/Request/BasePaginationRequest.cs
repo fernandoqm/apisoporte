@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SP.Infrastructure.Commons.Base
+namespace SP.Infrastructure.Commons.Base.Request
 {
     public class BasePaginationRequest
     {
@@ -19,7 +19,7 @@ namespace SP.Infrastructure.Commons.Base
             get => NumRecordsPage;
             set
             {
-                NumRecordsPage = (value > NumMaxRecordsPage) ? NumMaxRecordsPage : value;
+                NumRecordsPage = value > NumMaxRecordsPage ? NumMaxRecordsPage : value;
             }
         }
     }
