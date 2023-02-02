@@ -2,13 +2,13 @@
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using SP.Application.Interfaces;
+using SP.Application.Services;
 using System.Reflection;
 
 namespace SP.Application.Extensions
 {
     public static class InjectionExtensions
     {
-        [Obsolete]
         public static IServiceCollection AddInjectionApplication(this IServiceCollection services, IConfiguration configuration)
         {
             services.AddSingleton(configuration);
@@ -20,7 +20,7 @@ namespace SP.Application.Extensions
 
             services.AddAutoMapper(Assembly.GetExecutingAssembly());
 
-            services.AddScoped<IColaAtencionApplication, IColaAtencionApplication>();
+            services.AddScoped<IColaAtencionApplication, ColaAtencionApplication>();
             
             return services;
 

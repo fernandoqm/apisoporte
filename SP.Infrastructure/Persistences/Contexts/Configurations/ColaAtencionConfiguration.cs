@@ -8,7 +8,7 @@ namespace SP.Infrastructure.Persistences.Contexts.Configurations
     {
         public void Configure(EntityTypeBuilder<ColaAtencion> builder)
         {
-           builder.HasKey(e => e.ColaAtencion1).HasName("pk_cola_atencion");
+           builder.HasKey(e => e.ColaAtencionId).HasName("pk_cola_atencion");
 
             builder.ToTable("cola_atencion", "schqpos");
 
@@ -18,7 +18,7 @@ namespace SP.Infrastructure.Persistences.Contexts.Configurations
 
             builder.HasIndex(e => e.Tipo, "tipo_index");
 
-            builder.Property(e => e.ColaAtencion1)
+            builder.Property(e => e.ColaAtencionId)
                 .HasPrecision(20)
                 .HasDefaultValueSql("nextval(('seq_cola_atencion'::text)::regclass)")
                 .HasColumnName("cola_atencion");

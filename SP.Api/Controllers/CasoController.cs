@@ -32,7 +32,7 @@ namespace SP.Api.Controllers
             return Ok(response);
         }
 
-        [HttpGet("{casoId: decimal}")]
+        [HttpGet("{casoId:int}")]
         public async Task<IActionResult> CasoById(decimal Id)
         {
             var response = await _colaAtencionApplication.CasoById(Id);
@@ -46,14 +46,14 @@ namespace SP.Api.Controllers
             return Ok(response);
         }
 
-        [HttpPut("Editar/{casoId : decimal}")]
+        [HttpPut("Editar/{casoId:int}")]
         public async Task<IActionResult> EditarCaso(decimal casoId, [FromBody] ColaAtencionRequestDto requesDto)
         {
             var response = await _colaAtencionApplication.EditarCaso(casoId,requesDto);
             return Ok(response);
         }
 
-        [HttpPut("Borrar/{casoId : decimal}")]
+        [HttpPut("Borrar/{casoId:int}")]
         public async Task<IActionResult> BorrarCas(decimal casoId)
         {
             var response = await _colaAtencionApplication.BorrarCaso(casoId);
