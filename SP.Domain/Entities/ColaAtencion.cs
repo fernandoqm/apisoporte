@@ -5,6 +5,12 @@ namespace SP.Domain.Entities;
 
 public partial class ColaAtencion
 {
+
+    public ColaAtencion()
+    {
+
+    }
+
     public decimal ColaAtencionId { get; set; }
 
     public string CodCliente { get; set; } = null!;
